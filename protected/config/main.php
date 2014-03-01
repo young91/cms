@@ -34,14 +34,14 @@ return array(
            'class'=>'CFileCache',
         ),
 		'db'=>array(
-			'connectionString' => 'mysql:host=~dbHost~;dbname=~dbName~',
+			'connectionString' => 'mysql:host=localhost;dbname=cms',
 			'emulatePrepare' => true,
 			'enableParamLogging' => true,
 			'enableProfiling'=>true,
-			'username' => '~dbUsername~',
-			'password' => '~dbPassword~',
+			'username' => 'root',
+			'password' => 'yangliu',
 			'charset' => 'utf8',
-			'tablePrefix' => '~dbPre~',
+			'tablePrefix' => '',
 		),
 		'errorHandler'=>array(
             'errorAction'=>'error/index',
