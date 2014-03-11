@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>BageCMS管理系统</title>
+<title>young91管理系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="<?php echo $this->_baseUrl?>/static/admin/css/manage.css">
 <script type="text/javascript" src="<?php echo $this->_baseUrl?>/static/js/jquery/jquery-1.7.1.min.js"></script>
@@ -9,7 +9,7 @@
 
 <body scroll="no">
 <div class="header">
-  <div class="logo">bagecms.com</div>
+  <div class="logo">young91.com</div>
   <div class="nav">
     <ul>
       <?php $i = 0; foreach(XAdminiAcl::filterMenu() as $key=>$row):?>

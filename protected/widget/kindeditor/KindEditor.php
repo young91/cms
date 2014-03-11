@@ -1,12 +1,12 @@
 <?php
 /**
- * BageCMS KindEditor Widget
+ * young91 KindEditor Widget
  *
- * @author        shuguang <5565907@qq.com>
- * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
- * @link          http://www.bagecms.com
- * @package       BageCMS.Widget
- * @license       http://www.bagecms.com/license
+ * @author        young91
+ * @copyright     Copyright (c) 2014 young91. All rights reserved.
+ * @link          http://www.ecoutpost.com
+ * @package       young91.Widget
+ * @license       http://www.ecoutpost.com/license
  * @version       v1.0.0
  */
 

@@ -2,7 +2,7 @@
 
 /**
  * 分词
- * @author shuguang <5565907@qq.com>
+ * @author young91
  *
  */
 class XAutoKeyword

@@ -42,7 +42,7 @@
       </select>
       <select name="Post[special_id]">
         <option value="0">==所属专题==</option>
-        <?php foreach((array)Bagecms::getList('Special', '_special') as $speical):?>
+        <?php foreach((array)young91::getList('Special', '_special') as $speical):?>
         <option value="<?php echo $speical['id']?>" <?php XUtils::selected($speical['id'], $model->special_id);?>><?php echo $speical['title']?></option>
         <?php endforeach;?>
       </select></td>

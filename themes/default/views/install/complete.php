@@ -12,7 +12,7 @@
       <p >如需重新安装，请先删除 data/install.lock 文件</p>
       <p class="red">为了安全起见，请删除本安装程序控制器 <input name="submit" type="button" value=" 删除本安装程序 " id="rminstall"/></p> <p class="red">如果删除失败，请手动删除文件 protected/controllers/InstallController.php </p>
         <p class="help"> <strong>获取更多帮助</strong> <br />
-          帮助中心：<a href="http://www.bagecms.com/help" target="_blank"> http://www.bagecms.com/help</a><br />
+          帮助中心：<a href="http://www.ecoutpost.com/help" target="_blank"> http://www.ecoutpost.com/help</a><br />
           QQ群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：139869141 </p>
 
       </div>

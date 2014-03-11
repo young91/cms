@@ -2,15 +2,15 @@
 /**
  * 数据调用,带缓存功能
  *
- * @author        shuguang <5565907@qq.com>
- * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
- * @link          http://www.bagecms.com
- * @package       BageCMS.Tools
- * @license       http://www.bagecms.com/license
- * @version       v3.1.0
+ * @author        young91
+ * @copyright     Copyright (c) 2014 young91. All rights reserved.
+ * @link          http://www.ecoutpost.com
+ * @package       young91.Tools
+ * @license       http://www.ecoutpost.com/license
+ * @version       v1.0
  */
 
-class Bagecms {
+class young91 {
 
     /**
      * 获取单条记录
@@ -102,7 +102,7 @@ class Bagecms {
      */
     protected function _getList( $model = '', $id, $params = '' ) {
         $model = ucfirst( $model );
-        $bagecmsModel = new $model();
+        $young91Model = new $model();
         $params['limit'] && $array['limit'] = $params['limit'];
         $params['where'] && $array['condition'] = $params['where'];
         $params['order'] && $array['order'] = $params['order'];
@@ -117,11 +117,11 @@ class Bagecms {
             if ( $params['xsql'] ) {
                 $dataGet = Yii::app()->db->createCommand( $params['xsql'] )->queryAll();
             } else {
-                $dataGet = $bagecmsModel->findAll( $array );
+                $dataGet = $young91Model->findAll( $array );
             }
             if ( $dataGet ) {
                 foreach ( (array) $dataGet as $key => $row ) {
-                    foreach ( (array) self::_attributes( $params['select'], $bagecmsModel ) as $attr ) {
+                    foreach ( (array) self::_attributes( $params['select'], $young91Model ) as $attr ) {
                         $returnData[$key][$attr] = $row->$attr;
                     }
                 }

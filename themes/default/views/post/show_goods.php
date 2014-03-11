@@ -17,7 +17,7 @@
       <div class="border">
         <div id="portal_block_237_content" class="dxb_bc">
           <div class="module cl xld slideshow">
-            <?php foreach((array)Bagecms::getList('post','hot_goods',array('where'=>"status_is='Y' AND catalog_id=5",'order'=>'view_count DESC', 'limit'=>2)) as $goodsKey=>$goodsRow):?>
+            <?php foreach((array)young91::getList('post','hot_goods',array('where'=>"status_is='Y' AND catalog_id=5",'order'=>'view_count DESC', 'limit'=>2)) as $goodsKey=>$goodsRow):?>
 			<dl class="clear">
               <dd class="m"><a href="<?php echo $this->createUrl('post/show',array('id'=>$goodsRow['id']))?>" target="_blank"><img src="<?php echo $this->_baseUrl?>/<?php echo $goodsRow['attach_thumb']?>" width="150" height="115"></a></dd>
              
@@ -38,8 +38,8 @@
     </div>
     <div class="postWrap">
       <div class="h head">
-        <h1 class="title"><?php echo $bagecmsShow->title?></h1>
-        <p class="info"><?php echo date('Y-m-d H:i:s',$bagecmsShow->create_time)?><span class="split">|</span> 发布者: admin<span class="split">|</span> 查看: <em id="_viewnum"><?php echo $bagecmsShow->view_count?></em></p>
+        <h1 class="title"><?php echo $young91Show->title?></h1>
+        <p class="info"><?php echo date('Y-m-d H:i:s',$young91Show->create_time)?><span class="split">|</span> 发布者: admin<span class="split">|</span> 查看: <em id="_viewnum"><?php echo $young91Show->view_count?></em></p>
       </div>
 	  <?php if($attrVal):?>
       <div class="attrVal"><p>属性</p>
@@ -50,25 +50,25 @@
         </ul>
       </div>
       <?php endif?>
-	  <?php if($bagecmsShow->image_list):?>
-	  <?php $imageList = unserialize($bagecmsShow->image_list)?>
+	  <?php if($young91Show->image_list):?>
+	  <?php $imageList = unserialize($young91Show->image_list)?>
 	  <div class="postAlbum clear"><ul><?php foreach($imageList as $album):?><li><a href="<?php echo $this->_baseUrl?>/<?php echo $album['file']?>" data-lightbox="a"><img src="<?php echo $this->_baseUrl?>/<?php echo $album['file']?>" /></a></li><?php endforeach?></div>
 	  <?php endif?>
-      <?php if($bagecmsShow->intro):?>
-      <div class="intro clear"><?php echo $bagecmsShow->intro?></div>
+      <?php if($young91Show->intro):?>
+      <div class="intro clear"><?php echo $young91Show->intro?></div>
       <?php endif?>
       <div class="cdata">
         <table cellpadding="0" cellspacing="0" class="showTb">
           <tbody>
             <tr>
-              <td id="postContent"><?php echo $bagecmsShow->content?></td>
+              <td id="postContent"><?php echo $young91Show->content?></td>
             </tr>
           </tbody>
         </table>
       </div>
       <!--上下篇-->
-    <?php $before = Bagecms::getItem('Post', 'pageBefore', array('where'=>"id<{$bagecmsShow['id']} AND catalog_id={$bagecmsShow['catalog_id']}"))?>
-    <?php $behind = Bagecms::getItem('Post', 'pageBehind', array('where'=>"id>{$bagecmsShow['id']} AND catalog_id={$bagecmsShow['catalog_id']}"))?>
+    <?php $before = young91::getItem('Post', 'pageBefore', array('where'=>"id<{$young91Show['id']} AND catalog_id={$young91Show['catalog_id']}"))?>
+    <?php $behind = young91::getItem('Post', 'pageBehind', array('where'=>"id>{$young91Show['id']} AND catalog_id={$young91Show['catalog_id']}"))?>
     <div class="preNext clear" > <em class="floatL">上一条：
       <?php if($before):?>
       <a href="<?php echo $this->createUrl('post/show',array('id'=>$before['id']))?>"><?php echo $before['title']?></a>
@@ -84,7 +84,7 @@
       </em></div>
 	<!--/上下篇-->
     </div>
-   <?php $this->renderPartial('_comment',array('bagecmsShow'=>$bagecmsShow))?>
+   <?php $this->renderPartial('_comment',array('young91Show'=>$young91Show))?>
   </div>
 </div>
 <?php $this->renderPartial('/_include/footer')?>

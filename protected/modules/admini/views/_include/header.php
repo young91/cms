@@ -1,9 +1,9 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>BageCMS管理系统</title>
+<title>young91管理系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta content="bagecms.com." name="Copyright">
+<meta content="young91.com." name="Copyright">
 <script>
 	var webUrl = '<?php echo Yii::app()->request->getHostInfo()?>';
 	var staticPath = '<?php echo $this->_baseUrl?>/static/';

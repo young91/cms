@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php echo $this->_seoTitle?> - Powered By BageCMS</title>
-<meta name="generator" content="BageCMS CMS" />
-<meta name="author" content="shuguang" />
+<title><?php echo $this->_seoTitle?> - Powered By young91</title>
+<meta name="generator" content="young91 CMS" />
+<meta name="author" content="young91" />
 <meta name="keywords" content="<?php echo $this->_seoKeywords?>">
 <meta name="description" content="<?php echo $this->_seoDescription?>">
 <link rel="stylesheet" href="<?php echo $this->_theme->baseUrl?>/css/style.css">

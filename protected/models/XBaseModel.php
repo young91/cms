@@ -1,7 +1,7 @@
 <?php
 /**
  * 模型基础类，所有模型均需继承此类
- * @author shuguang <5565907@qq.com>
+ * @author young91
  */
 class XBaseModel extends CActiveRecord
 {

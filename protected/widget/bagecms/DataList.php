@@ -1,12 +1,12 @@
 <?php
 /**
- * BageCMS DataList Widget
+ * young91 DataList Widget
  * 
- * @author        shuguang <5565907@qq.com>
- * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
- * @link          http://www.bagecms.com
- * @package       BageCMS.Widget
- * @license       http://www.bagecms.com/license
+ * @author        young91
+ * @copyright     Copyright (c) 2014 young91. All rights reserved.
+ * @link          http://www.ecoutpost.com
+ * @package       young91.Widget
+ * @license       http://www.ecoutpost.com/license
  * @version       v1.0.0
  */
 
@@ -32,7 +32,7 @@ class DataList extends CWidget
 
     public function run() {
 
-        $tpl = isset($this->params['tpl'])? $this->params['tpl'] : 'bagecms';
+        $tpl = isset($this->params['tpl'])? $this->params['tpl'] : 'young91';
         $this->render( $tpl , array(
             'datalist'=>$this->datalist,
         ));
@@ -46,7 +46,7 @@ class DataList extends CWidget
     protected function _datalist() {
 
         $model = ucfirst( $this->model );
-        $bagecmsModel = new $model();
+        $young91Model = new $model();
         $this->params['limit'] && $array['limit'] = $this->params['limit'];
         $this->params['where'] && $array['condition'] = $this->params['where'];
         $this->params['order'] && $array['order'] = $this->params['order'];
@@ -62,9 +62,9 @@ class DataList extends CWidget
             if ( $this->params['sql'] )
                 $dataGet = Yii::app()->db->createCommand( $this->params['sql'] )->queryAll();
             else
-                $dataGet = $bagecmsModel->findAll( $array );
+                $dataGet = $young91Model->findAll( $array );
             foreach ( (array) $dataGet as $key => $row ) {
-                foreach ( (array) self::_attributes( $this->params['select'], $bagecmsModel ) as $attr ) {
+                foreach ( (array) self::_attributes( $this->params['select'], $young91Model ) as $attr ) {
                     $datalist[$key][$attr] = $row->$attr;
                 }
             }

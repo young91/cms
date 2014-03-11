@@ -17,7 +17,7 @@
       </tr>
       <tr>
         <th height="30" align="right">数据库名称：</th>
-        <td><input value="bagecms" type="text" name="dbName" id="dbName" class="class_input validate[required]" /> <span class="cnote">请先创建数据库</span></td>
+        <td><input value="young91" type="text" name="dbName" id="dbName" class="class_input validate[required]" /> <span class="cnote">请先创建数据库</span></td>
       </tr>
       <tr>
         <th height="30" align="right">数据库用户：</th>

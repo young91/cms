@@ -15,7 +15,7 @@
 <p class="help">
         <strong>获取更多帮助</strong>
 <br />
-帮助中心：<a href="http://www.bagecms.com/help" target="_blank"> http://www.bagecms.com/help</a><br />QQ群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：139869141
+帮助中心：<a href="http://www.ecoutpost.com/help" target="_blank"> http://www.ecoutpost.com/help</a><br />QQ群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：139869141
 </p>
         </div>
     </div>

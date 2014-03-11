@@ -17,7 +17,7 @@
   </thead>
   <tr>
     <td width="100" >程序版本</td>
-    <td ><?php echo $this->_bagecms?> <?php echo $this->_bagecmsRelease?></td>
+    <td ><?php echo $this->_young91?> <?php echo $this->_young91Release?></td>
   </tr>
   <tr>
     <td >最新版本</td>
@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <td >产品支持</td>
-    <td ><a href="http://www.bagecms.com" target="_blank">www.bagecms.com </a><a href="http://www.bagecms.com/help" target="_blank">使用手册</a></td>
+    <td ><a href="http://www.ecoutpost.com" target="_blank">www.young91.com </a><a href="http://www.ecoutpost.com/help" target="_blank">使用手册</a></td>
   </tr>
   <tr>
     <td >操作系统软件</td>

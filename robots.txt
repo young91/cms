@@ -1,5 +1,5 @@
 #
-# robots.txt for CMS
+# robots.txt for young91
 #
 User-agent: * 
 Disallow: /admini/

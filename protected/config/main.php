@@ -2,17 +2,17 @@
 /**
  * 系统配置
  * 
- * @author        shuguang <5565907@qq.com>
- * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
- * @link          http://www.bagecms.com
- * @package       BageCMS.Config
- * @license       http://www.bagecms.com/license
- * @version       v3.1.0
+ * @author        young91
+ * @copyright     Copyright (c) 2014 young91. All rights reserved.
+ * @link          http://www.ecoutpost.com
+ * @package       young91
+ * @license       http://www.ecoutpost.com/license
+ * @version       v1.0
  */
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'BageCMS',
+	'name'=>'young91',
     'language'=>'zh_cn',
     'theme'=>'default',
     'timeZone'=>'Asia/Shanghai',
@@ -22,7 +22,7 @@ return array(
 		'application.extensions.*',
 	),
     'modules'=>array(
-		'admini'=>array(
+		'jj'=>array(
 		     'class'=>'application.modules.admini.AdminiModule',
 		),
 		'account'=>array(
@@ -34,21 +34,21 @@ return array(
            'class'=>'CFileCache',
         ),
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=cms',
+			'connectionString' => 'mysql:host=127.0.0.1;dbname=mvcms',
 			'emulatePrepare' => true,
 			'enableParamLogging' => true,
 			'enableProfiling'=>true,
 			'username' => 'root',
 			'password' => 'yangliu',
 			'charset' => 'utf8',
-			'tablePrefix' => '',
+			'tablePrefix' => 'mv_',
 		),
 		'errorHandler'=>array(
             'errorAction'=>'error/index',
         ), 
         'urlManager'=>array(
-        	//'urlFormat'=>'path',
-        	//'urlSuffix'=>'.html',
+        	'urlFormat'=>'path',
+        	'urlSuffix'=>'.html',
         	'showScriptName'=>true,
         	'rules'=>array(
         		'post/<id:\d+>/*'=>'post/show',

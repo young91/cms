@@ -2,12 +2,12 @@
 /**
  * 系统首页
  * 
- * @author        shuguang <5565907@qq.com>
- * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
- * @link          http://www.bagecms.com
- * @package       BageCMS.admini.Controller
- * @license       http://www.bagecms.com/license
- * @version       v3.1.0
+ * @author        young91
+ * @copyright     Copyright (c) 2014 young91. All rights reserved.
+ * @link          http://www.ecoutpost.com
+ * @package       young91.admini.Controller
+ * @license       http://www.ecoutpost.com/license
+ * @version       v1.0
  */
 
 class DefaultController extends XAdminiBase
@@ -25,9 +25,9 @@ class DefaultController extends XAdminiBase
 	 */
     public function actionHome ()
     {
-        $data['soft'] = 'bagecms';
-        $data['softVersion'] = $this->_bagecms;
-        $data['softRelease'] = $this->_bagecmsRelease;
+        $data['soft'] = 'young91';
+        $data['softVersion'] = $this->_young91;
+        $data['softRelease'] = $this->_young91Release;
         $data['serverSoft'] = $_SERVER['SERVER_SOFTWARE'];
         $data['serverOs'] = PHP_OS;
         $data['phpVersion'] = PHP_VERSION;

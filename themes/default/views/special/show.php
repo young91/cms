@@ -36,7 +36,7 @@
           <?php endforeach?>
         </dl>
         <div class="pagebar clear">
-          <?php $this->widget('CLinkPager',array('pages'=>$bagecmsPagebar));?>
+          <?php $this->widget('CLinkPager',array('pages'=>$young91Pagebar));?>
         </div>
       </div>
     </div>
