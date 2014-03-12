@@ -2,12 +2,12 @@
 /**
  * 控制器基类，前端，后端均需继承此类
  * 
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 
 class Controller extends CController
@@ -20,8 +20,8 @@ class Controller extends CController
     protected $_conf;
     protected $_theme;
     protected $_themePath;
-    protected $_young91 = 'young913.1.0';
-    protected $_young91Release = '20131020';
+    protected $_bagecms = 'BageCMS3.1.0';
+    protected $_bagecmsRelease = '20131020';
 
     /**
 	 * 初始化
@@ -118,7 +118,7 @@ class Controller extends CController
     * 版本信息
     */
     public function actionVersion(){
-        exit($this->_young91 .' '. $this->_young91Release);
+        exit($this->_bagecms .' '. $this->_bagecmsRelease);
     }
 
     /**

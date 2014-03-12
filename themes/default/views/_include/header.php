@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php echo $this->_seoTitle?> - Powered By young91</title>
-<meta name="generator" content="young91 CMS" />
-<meta name="author" content="young91" />
+<title><?php echo $this->_seoTitle?> - Powered By BageCMS</title>
+<meta name="generator" content="BageCMS CMS" />
+<meta name="author" content="shuguang" />
 <meta name="keywords" content="<?php echo $this->_seoKeywords?>">
 <meta name="description" content="<?php echo $this->_seoDescription?>">
 <link rel="stylesheet" href="<?php echo $this->_theme->baseUrl?>/css/style.css">
@@ -70,7 +70,7 @@
         <li><a href="<?php echo $this->createUrl('/question')?>">留言咨询</a></li>
       </ul>
     </div>-->
-    <div class="subnav"> <i class="z"></i> <span> <a href="http://www.bagesoft.cn" >八哥软件</a> &nbsp;&nbsp;&nbsp; 咨询QQ：5565907 </span> <i class="y"></i> </div>
+    <div class="subnav"> <i class="z"></i> <span>  &nbsp;&nbsp;&nbsp; 咨询QQ：345819146 </span> <i class="y"></i> </div>
   </div>
 </div>
 <!--/头--> 

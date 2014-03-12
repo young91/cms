@@ -18,14 +18,14 @@
     </div>
       <div class="listBox clear">
         <ul>
-         <?php foreach((array)$young91DataList as $young91Key=>$young91Row):?>
+         <?php foreach((array)$bagecmsDataList as $bagecmsKey=>$bagecmsRow):?>
           <li class="full cl ">
-            <div class="b_img"><a href="<?php echo $this->createUrl('post/show',array('id'=>$young91Row->id))?>" target="_blank"><img src="<?php echo $this->_baseUrl?>/<?php echo $young91Row->attach_thumb?>" alt="<?php echo $young91Row->title?>" class="tn"></a></div>
-            <h2><a href="<?php echo $this->createUrl('post/show',array('id'=>$young91Row->id))?>" target="_blank" style=""><?php echo $young91Row->title?></a>fff </h2>
+            <div class="b_img"><a href="<?php echo $this->createUrl('post/show',array('id'=>$bagecmsRow->id))?>" target="_blank"><img src="<?php echo $this->_baseUrl?>/<?php echo $bagecmsRow->attach_thumb?>" alt="<?php echo $bagecmsRow->title?>" class="tn"></a></div>
+            <h2><a href="<?php echo $this->createUrl('post/show',array('id'=>$bagecmsRow->id))?>" target="_blank" style=""><?php echo $bagecmsRow->title?></a>fff </h2>
           </li>
           <?php endforeach?>
         </ul>
       </div>
-      <?php $this->widget('CLinkPager',array('pages'=>$young91Pagebar));?>
+      <?php $this->widget('CLinkPager',array('pages'=>$bagecmsPagebar));?>
     </div>
 <?php $this->renderPartial('/_include/footer')?>

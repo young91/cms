@@ -2,12 +2,12 @@
 
 <head>
 <meta charset="utf-8">
-<title>管理登录 - young91</title>
-<meta name="keywords" content="young91,bageSOFT" />
-<meta name="description" content="young91(八哥CMS),专业的建站工具" />
-<meta name="generator" content="young913.1" />
-<meta name="author" content="young91.com" />
-<meta name="copyright" content="2013-2014 young91.com" />
+<title>管理登录 - BageCMS</title>
+<meta name="keywords" content="bagecms,bageSOFT" />
+<meta name="description" content="bagecms(八哥CMS),专业的建站工具" />
+<meta name="generator" content="BageCMS3.1" />
+<meta name="author" content="bagecms.com" />
+<meta name="copyright" content="2013-2014 bagecms.com" />
 <link rel="stylesheet" type="text/css" href="<?php echo $this->_baseUrl?>/static/admin/css/login-style.css" />
 <script type="text/javascript" language="javascript">
     //<![CDATA[
@@ -45,7 +45,7 @@
       <?php $this->endWidget(); ?>
     </div>
     <br class="clear-fix"/>
-    <div class="copyright">Copyright&copy; <a title="young91" target="_blank" href="http://www.ecoutpost.com">young91.com</a>. All Thrusts Reserved.</div>
+    <div class="copyright">Copyright&copy; <a title="bagecms" target="_blank" href="http://www.bagecms.com">bagecms.com</a>. All Thrusts Reserved.</div>
   </div>
 </div>
 </body>

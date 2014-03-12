@@ -2,12 +2,12 @@
 /**
  * 标签控制器
  *
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 class TagController extends XFrontBase
 {
@@ -27,8 +27,8 @@ class TagController extends XFrontBase
     $post2TagsPages->params = is_array($pageParams) ? $pageParams : array ();
     $postTagsCriteria->limit = $post2TagsPages->pageSize;
     $postTagsCriteria->offset = $post2TagsPages->currentPage * $post2TagsPages->pageSize;
-    $data['young91DataList'] = $postTagsModel->findAll($postTagsCriteria);
-    $data['young91Pagebar'] = $post2TagsPages;
+    $data['bagecmsDataList'] = $postTagsModel->findAll($postTagsCriteria);
+    $data['bagecmsPagebar'] = $post2TagsPages;
     $this->render('index', $data);
   }
 
@@ -54,8 +54,8 @@ class TagController extends XFrontBase
     $post2TagsPages->params = is_array($pageParams) ? $pageParams : array ();
     $post2TagsCriteria->limit = $post2TagsPages->pageSize;
     $post2TagsCriteria->offset = $post2TagsPages->currentPage * $post2TagsPages->pageSize;
-    $data['young91DataList'] = $tagModel->findAll($post2TagsCriteria);
-    $data['young91Pagebar'] = $post2TagsPages;
+    $data['bagecmsDataList'] = $tagModel->findAll($post2TagsCriteria);
+    $data['bagecmsPagebar'] = $post2TagsPages;
     $data['tagName'] = $tagName;
     $this->_seoTitle = 'Tag-'.$tagName;
     $this->render('post2tags', $data);

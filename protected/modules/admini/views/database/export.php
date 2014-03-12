@@ -18,7 +18,7 @@
       <td class="tb_title">分卷大小：</td>
     </tr>
     <tr >
-      <td ><input type="hidden" name="tabletype" value="young91" id="young91">
+      <td ><input type="hidden" name="tabletype" value="bagecms" id="bagecms">
         大小
         <input name="sizelimit" type="text" id="sizelimit" value="2048" />
         kb<br /></td>

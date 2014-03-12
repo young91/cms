@@ -24,8 +24,8 @@ function uploadifyAction(fileField,frameId) {
             'iframe': {
                 'src': '<?php echo $this->createUrl('uploadify/basic')?>',
                 'height': 300,
-                'name': 'young91_com',
-                'id': 'young91_com'
+                'name': 'bagecms_com',
+                'id': 'bagecms_com'
             }
         },
         width: 600,
@@ -33,7 +33,7 @@ function uploadifyAction(fileField,frameId) {
 			{
 				caption: '确认',
 				callback: function() {
-					var htmls = $(window.frames['young91_com'].document).find("#fileListWarp").html();
+					var htmls = $(window.frames['bagecms_com'].document).find("#fileListWarp").html();
 					if(htmls){
 						$("#" + fileField).append(htmls);
 					}else{

@@ -2,12 +2,12 @@
 /**
  * "{{post_comment}}" 数据表模型类.
  *
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Model
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Model
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 class PostComment extends XBaseModel
 {

@@ -2,12 +2,12 @@
 /**
  * 内容控制器
  *
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 class PostController extends XFrontBase
 {
@@ -24,7 +24,7 @@ class PostController extends XFrontBase
         $resultArr = self::_catalogList( array( 'catalog'=>$catalogArr['id'], 'pageSize'=>$catalogArr['page_size']  ));
       }else {
         $resultArr = self::_catalogItem( array( 'catalog'=>$catalogArr['id'] ) );
-        $tpl = empty( $resultArr['young91CatalogShow']->template_page ) ? 'list_page': $resultArr['young91CatalogShow']->template_page ;
+        $tpl = empty( $resultArr['bagecmsCatalogShow']->template_page ) ? 'list_page': $resultArr['bagecmsCatalogShow']->template_page ;
       }
     }else {
       $resultArr = self::_catalogList( array( 'keyword'=>$keyword ) );
@@ -67,15 +67,15 @@ class PostController extends XFrontBase
     $postPages->params = is_array( $pageParams ) ? $pageParams : array ();
     $postCriteria->limit = $postPages->pageSize;
     $postCriteria->offset = $postPages->currentPage * $postPages->pageSize;
-    $young91DataList = $postModel->findAll( $postCriteria );
+    $bagecmsDataList = $postModel->findAll( $postCriteria );
     $catalogArr = Catalog::item($params['catalog'], $this->_catalog);
     if($catalogArr){
       $this->_seoTitle = empty($catalogArr['catalog_name'])? $this->_seoTitle : $catalogArr['catalog_name'];
-      $young91CatalogData = $catalogArr;
+      $bagecmsCatalogData = $catalogArr;
       $this->_seoKeywords = empty($catalogArr['seo_keywords'])? $this->_seoKeywords : $catalogArr['seo_keywords'];
       $this->_seoDescription = empty($catalogArr['seo_description'])? $this->_seoDescription : $catalogArr['seo_description'];
     }
-    return array( 'young91DataList'=>$young91DataList, 'young91Pagebar'=>$postPages, 'young91CatalogData'=>$young91CatalogData );
+    return array( 'bagecmsDataList'=>$bagecmsDataList, 'bagecmsPagebar'=>$postPages, 'bagecmsCatalogData'=>$bagecmsCatalogData );
   }
 
   /**
@@ -90,7 +90,7 @@ class PostController extends XFrontBase
       $this->_seoTitle = empty($catalogModel->seo_title)? $catalogModel->catalog_name : $catalogModel->seo_title;
       $this->_seoKeywords = $catalogModel->seo_keywords;
       $this->_seoDescription = $catalogModel->seo_description;
-      return array( 'young91CatalogShow'=>$catalogModel);
+      return array( 'bagecmsCatalogShow'=>$catalogModel);
     }else{
       throw new CHttpException( 404, '内容不存在' );
     }
@@ -100,32 +100,32 @@ class PostController extends XFrontBase
    * 浏览详细内容
    */
   public function actionShow( $id ) {
-    $young91Show = Post::model()->findByPk( intval( $id ) );
-    if ( false == $young91Show )
+    $bagecmsShow = Post::model()->findByPk( intval( $id ) );
+    if ( false == $bagecmsShow )
         throw new CHttpException( 404, '内容不存在' );
     //更新浏览次数
-    $young91Show->updateCounters(array ('view_count' => 1 ), 'id=:id', array ('id' => $id ));
+    $bagecmsShow->updateCounters(array ('view_count' => 1 ), 'id=:id', array ('id' => $id ));
     //seo信息
-    $this->_seoTitle = empty( $young91Show->seo_title ) ? $young91Show->title  .' - '. $this->_conf['site_name'] : $young91Show->seo_title;
-    $this->_seoKeywords = empty( $young91Show->seo_keywords ) ? $this->_seoKeywords  : $young91Show->seo_keywords;
-    $this->_seoDescription = empty( $young91Show->seo_description ) ? $this->_seoDescription: $young91Show->seo_description;
-    $catalogArr = Catalog::item($young91Show->catalog_id, $this->_catalog);
+    $this->_seoTitle = empty( $bagecmsShow->seo_title ) ? $bagecmsShow->title  .' - '. $this->_conf['site_name'] : $bagecmsShow->seo_title;
+    $this->_seoKeywords = empty( $bagecmsShow->seo_keywords ) ? $this->_seoKeywords  : $bagecmsShow->seo_keywords;
+    $this->_seoDescription = empty( $bagecmsShow->seo_description ) ? $this->_seoDescription: $bagecmsShow->seo_description;
+    $catalogArr = Catalog::item($bagecmsShow->catalog_id, $this->_catalog);
 
-    if($young91Show->template){
-      $tpl = $young91Show->template;
+    if($bagecmsShow->template){
+      $tpl = $bagecmsShow->template;
     }elseif($catalogArr['template_show']){
        $tpl = $catalogArr['template_show'];
     }else{
         $tpl = 'show_post';
     }
     //自定义数据
-    $attrVal = AttrVal::model()->findAll(array('condition'=>'post_id=:postId','with'=>'attr', 'params'=>array('postId'=>$young91Show->id)));
+    $attrVal = AttrVal::model()->findAll(array('condition'=>'post_id=:postId','with'=>'attr', 'params'=>array('postId'=>$bagecmsShow->id)));
 
     $tplVar = array(
-        'young91Show'=>$young91Show,
+        'bagecmsShow'=>$bagecmsShow,
         'attrVal'=>$attrVal,
         'catalogArr'=>$catalogArr,
-        'catalogChild'=>Catalog::lite(intval( $young91Show->catalog_id)),
+        'catalogChild'=>Catalog::lite(intval( $bagecmsShow->catalog_id)),
     );
     $this->render( $tpl, $tplVar);
   }
@@ -146,20 +146,20 @@ class PostController extends XFrontBase
         throw new Exception( '编号丢失' );
       elseif ( empty( $nickname ) || empty( $email ) ||  empty( $comment ) )
         throw new Exception( '昵称、邮箱、内容必须填写' );
-      $young91PostCommentModel = new PostComment();
+      $bagecmsPostCommentModel = new PostComment();
 
-      $young91PostCommentModel ->attributes = array(
+      $bagecmsPostCommentModel ->attributes = array(
           'post_id'=> $postId,
           'nickname'=> $nickname,
           'email'=> $email,
           'content'=> $comment,
       );
 
-      if ( $young91PostCommentModel->save() ) {
+      if ( $bagecmsPostCommentModel->save() ) {
         $var['state'] = 'success';
         $var['message'] = '提交成功';
       }else {
-        throw new Exception( CHtml::errorSummary( $young91PostCommentModel, null, null, array ( 'firstError' => '' ) ) );
+        throw new Exception( CHtml::errorSummary( $bagecmsPostCommentModel, null, null, array ( 'firstError' => '' ) ) );
       }
       
     } catch ( Exception $e ) {

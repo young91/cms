@@ -7,10 +7,10 @@
 <form action="" method="post"  enctype="multipart/form-data" >
   <table class="content_list">
     <tr>
-      <td class="td27">当前版本：young91 V<?php echo $this->_young91?></td>
+      <td class="td27">当前版本：BageCMS V<?php echo $this->_bagecms?></td>
     </tr>
     <tr class="noborder">
-      <td class="vtop rowform">官方版本：young91 V</td>
+      <td class="vtop rowform">官方版本：BageCMS V</td>
     </tr>
     <tr>
       <td class="td27">&nbsp;</td>

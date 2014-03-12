@@ -2,12 +2,12 @@
 /**
  * 问答
  *
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 
 class QuestionController extends XFrontBase
@@ -17,22 +17,22 @@ class QuestionController extends XFrontBase
      */
     public function actionIndex() {
 
-        $young91QuestionModel = new Question();
-        $young91QuestionCriteria = new CDbCriteria();
-        $young91QuestionCriteria->condition = 'status_is=:status';
-        $young91QuestionCriteria->params = array( 'status'=>'Y' );
-        $young91QuestionCriteria->order = 't.id DESC';
-        $young91QuestionCount = $young91QuestionModel->count( $young91QuestionCriteria );
-        $young91QuestionPages = new CPagination( $young91QuestionCount );
-        $young91QuestionPages->pageSize = 10;
-        $young91QuestionPageParams = XUtils::buildCondition( $_GET, array () );
-        $young91QuestionPageParams['#'] = 'list';
-        $young91QuestionPages->params = is_array( $young91QuestionPageParams ) ? $young91QuestionPageParams : array ();
-        $young91QuestionCriteria->limit = $young91QuestionPages->pageSize;
-        $young91QuestionCriteria->offset = $young91QuestionPages->currentPage * $young91QuestionPages->pageSize;
-        $young91QuestionList = $young91QuestionModel->findAll( $young91QuestionCriteria );
+        $bagecmsQuestionModel = new Question();
+        $bagecmsQuestionCriteria = new CDbCriteria();
+        $bagecmsQuestionCriteria->condition = 'status_is=:status';
+        $bagecmsQuestionCriteria->params = array( 'status'=>'Y' );
+        $bagecmsQuestionCriteria->order = 't.id DESC';
+        $bagecmsQuestionCount = $bagecmsQuestionModel->count( $bagecmsQuestionCriteria );
+        $bagecmsQuestionPages = new CPagination( $bagecmsQuestionCount );
+        $bagecmsQuestionPages->pageSize = 10;
+        $bagecmsQuestionPageParams = XUtils::buildCondition( $_GET, array () );
+        $bagecmsQuestionPageParams['#'] = 'list';
+        $bagecmsQuestionPages->params = is_array( $bagecmsQuestionPageParams ) ? $bagecmsQuestionPageParams : array ();
+        $bagecmsQuestionCriteria->limit = $bagecmsQuestionPages->pageSize;
+        $bagecmsQuestionCriteria->offset = $bagecmsQuestionPages->currentPage * $bagecmsQuestionPages->pageSize;
+        $bagecmsQuestionList = $bagecmsQuestionModel->findAll( $bagecmsQuestionCriteria );
         $this->_seoTitle = '留言咨询 - '.$this->_conf['site_name'];
-        $this->render( 'index', array( 'young91QuestionList'=>$young91QuestionList, 'pages'=>$young91QuestionPages ) );
+        $this->render( 'index', array( 'bagecmsQuestionList'=>$bagecmsQuestionList, 'pages'=>$bagecmsQuestionPages ) );
     }
 
     /**

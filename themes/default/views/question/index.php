@@ -28,7 +28,7 @@
       <dd>  <input name="submit" type="button" id="questionPost" value="提交" class="button"/><div id="errorMessage"></div></dd>
       </dl>
       </form>
-      <?php foreach((array)$young91QuestionList as $key=>$row):?>
+      <?php foreach((array)$bagecmsQuestionList as $key=>$row):?>
       <dl class="qlist">
         <dt><?php echo date('Y-m-d H:i:s',$row->create_time) ?> 收到来自：<span><?php echo $row->realname?></span>留言</dt>
         <dd><?php echo CHtml::encode($row->question)?></dd>

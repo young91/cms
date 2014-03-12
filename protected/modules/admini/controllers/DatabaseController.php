@@ -2,12 +2,12 @@
 /**
  * 数据库管理
  * 
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.admini.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.admini.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 
 class DatabaseController extends XAdminiBase
@@ -219,7 +219,7 @@ class DatabaseController extends XAdminiBase
         }
         
         if (trim($tabledump)) {
-            $tabledump = "# young91 database backup\n# version:".$this->_young91."\n# time:" . date('Y-m-d H:i:s') . "\n# type:cms\n# www.young91.com\n# --------------------------------------------------------\n\n\n" . $tabledump;
+            $tabledump = "# bagecms database backup\n# version:".$this->_bagecms."\n# time:" . date('Y-m-d H:i:s') . "\n# type:cms\n# www.bagecms.com\n# --------------------------------------------------------\n\n\n" . $tabledump;
             $tableid = $i;
             $filename = $tabletype . '_' . date('Ymd') . '_' . $random . '_' . $fileid . '.sql';
             $altid = $fileid;
@@ -255,7 +255,7 @@ class DatabaseController extends XAdminiBase
                 $prepre = '';
                 $info = $infos = $other = $others = array ();
                 foreach ($sqlfiles as $id => $sqlfile) {
-                    if (preg_match("/(young91_[0-9]{8}_[0-9a-z]{4}_)([0-9]+)\.sql/i", basename($sqlfile), $num)) {
+                    if (preg_match("/(bagecms_[0-9]{8}_[0-9a-z]{4}_)([0-9]+)\.sql/i", basename($sqlfile), $num)) {
                         $info['filename'] = basename($sqlfile);
                         $info['filesize'] = round(filesize($sqlfile) / (1024 * 1024), 2);
                         $info['maketime'] = date('Y-m-d H:i:s', filemtime($sqlfile));

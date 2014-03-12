@@ -14,18 +14,18 @@
         </div>
         <div class="listBox clear">
           <ul class="title">
-           <?php foreach((array)$young91DataList as $young91Key=>$young91Row):?>
+           <?php foreach((array)$bagecmsDataList as $bagecmsKey=>$bagecmsRow):?>
             <li class="clear ">
               <h2>
-                <p class="y"> <span class="date"><?php echo date('Y-m-d H:i:s',$young91Row->create_time) ?></span></p>
-                <a href="<?php echo $this->createUrl('post/show',array('id'=>$young91Row->id))?>" target="_blank" class="title" <?php if($young91Row->title_style):?>style="<?php echo $young91Row->title_style?>"<?php endif?>><?php echo $young91Row->title?></a> </h2>
+                <p class="y"> <span class="date"><?php echo date('Y-m-d H:i:s',$bagecmsRow->create_time) ?></span></p>
+                <a href="<?php echo $this->createUrl('post/show',array('id'=>$bagecmsRow->id))?>" target="_blank" class="title" <?php if($bagecmsRow->title_style):?>style="<?php echo $bagecmsRow->title_style?>"<?php endif?>><?php echo $bagecmsRow->title?></a> </h2>
             </li>
             <?php endforeach?>
            
           </ul>
         </div>
         <div class="pagebar clear">
-          <?php $this->widget('CLinkPager',array('pages'=>$young91Pagebar));?>
+          <?php $this->widget('CLinkPager',array('pages'=>$bagecmsPagebar));?>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <?php $this->renderPartial('/_include/header')?>
 
-<!--广告-->
-<?php $indexAd = young91::getList('ad','index_ad',array('where'=>"status_is='Y' AND title_alias='index_banner'", 'order'=>'sort_order DESC'))?>
+<!--广告
+<?php $indexAd = Bagecms::getList('ad','index_ad',array('where'=>"status_is='Y' AND title_alias='index_banner'", 'order'=>'sort_order DESC'))?>
 <div class="banner">
   <div class="bd">
     <ul>
@@ -22,10 +22,10 @@
 <script type="text/javascript">
 jQuery(".banner").hover(function(){jQuery(this).find(".prev,.next").stop(true,true).fadeTo(4000,0.5)},function(){jQuery(this).find(".prev,.next").fadeOut()});jQuery(".banner").slide({titCell:".hd ul",mainCell:".bd ul",effect:"fold",autoPlay:true,autoPage:true,trigger:"click",startFun:function(i){var curLi=jQuery(".banner .bd li").eq(i);if(!!curLi.attr("_src")){curLi.css("background-image",curLi.attr("_src")).removeAttr("_src")}}});
 </script>
-<!--/广告-->
+/广告-->
 
 <div class="index">
-<?php $young91About = young91::getItem('page','index_about', array('where'=>"title_alias='about'"));?>
+<?php $bagecmsAbout = Bagecms::getItem('page','index_about', array('where'=>"title_alias='about'"));?>
 <!--首页模块-->
 <div class="module clear">
   <div class="wrap">
@@ -36,10 +36,10 @@ jQuery(".banner").hover(function(){jQuery(this).find(".prev,.next").stop(true,tr
           <a href="<?php echo $this->createUrl('page/show',array('name'=>'about'))?>" class="move" target="_blank">更多</a></div>
       </div>
       <div class="con">
-        <?php if($young91About['attach_file']):?>
-        <img src="<?php echo $this->_baseUrl?>/<?php echo $young91About['attach_file']?>"  />
+        <?php if($bagecmsAbout['attach_file']):?>
+        <img src="<?php echo $this->_baseUrl?>/<?php echo $bagecmsAbout['attach_file']?>"  />
         <?php endif?>
-        <p><?php echo $young91About['intro']?></p>
+        <p><?php echo $bagecmsAbout['intro']?></p>
         <p><a href="<?php echo $this->createUrl('page/show',array('name'=>'about'))?>" class="link floatR" target="_blank">了解更多</a></p>
       </div>
     </div>
@@ -64,7 +64,7 @@ jQuery(".banner").hover(function(){jQuery(this).find(".prev,.next").stop(true,tr
         <a href="<?php echo $this->createUrl('post/index',array('catalog'=>'company-news'))?>" class="move" target="_blank">更多</a> </div>
       <div class="con">
         <ul>
-          <?php foreach((array)young91::getList('post','index_news',array('where'=>"status_is='Y' AND catalog_id=2",'order'=>'id DESC', 'limit'=>10)) as $newsKey=>$newsRow):?>
+          <?php foreach((array)Bagecms::getList('post','index_news',array('where'=>"status_is='Y' AND catalog_id=2",'order'=>'id DESC', 'limit'=>10)) as $newsKey=>$newsRow):?>
           <li><em class="date"><?php echo date('m-d',$newsRow['create_time'])?></em><a href="<?php echo $this->createUrl('post/show',array('id'=>$newsRow['id']))?>" target="_blank"><?php echo $newsRow['title']?></a></li>
           <?php endforeach?>
         </ul>
@@ -83,7 +83,7 @@ jQuery(".banner").hover(function(){jQuery(this).find(".prev,.next").stop(true,tr
     <div class="scrollBox">
       <div class="goodsImage">
         <ul class="list" >
-          <?php foreach((array)young91::getList('post','index_goods',array('where'=>"status_is='Y' AND catalog_id=5",'order'=>'id DESC', 'limit'=>8)) as $goodsKey=>$goodsRow):?>
+          <?php foreach((array)Bagecms::getList('post','index_goods',array('where'=>"status_is='Y' AND catalog_id=5",'order'=>'id DESC', 'limit'=>8)) as $goodsKey=>$goodsRow):?>
           <li style="float: left; width: 162px; "><a href="<?php echo $this->createUrl('post/show',array('id'=>$goodsRow['id']))?>" target="_blank" title="<?php echo $goodsRow['title']?>"><img src="<?php echo $this->_baseUrl ?>/<?php echo $goodsRow['attach_file']?>" width="162" height="120" alt="<?php echo $goodsRow['title']?>"><span><?php echo $goodsRow['title']?></span></a></li>
           <?php endforeach?>
         </ul>

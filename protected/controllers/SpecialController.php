@@ -2,12 +2,12 @@
 /**
  * 专题控制器
  *
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 class SpecialController extends XFrontBase
 {
@@ -20,8 +20,8 @@ class SpecialController extends XFrontBase
     $specialCriteria->addCondition ( 't.status_is=:status');
     $specialCriteria->params[':status'] = 'Y';
     $specialCriteria->order = 't.id DESC';
-    $young91SpecialCount = $specialModel->count( $specialCriteria );
-    $specialPages = new CPagination( $young91SpecialCount );
+    $bagecmsSpecialCount = $specialModel->count( $specialCriteria );
+    $specialPages = new CPagination( $bagecmsSpecialCount );
     $specialPages->pageSize = 15;
     $specialPageParams = XUtils::buildCondition( $_GET, array (  ) );
     $specialPageParams['#'] = 'list';
@@ -30,7 +30,7 @@ class SpecialController extends XFrontBase
     $specialCriteria->offset = $specialPages->currentPage * $specialPages->pageSize;
     $specialList = $specialModel->findAll( $specialCriteria );
     $this->_seoTitle = '专题 - '.$this->_conf['site_name'];
-    $this->render( 'index', array( 'young91DataList'=>$specialList, 'young91Pagebar'=>$specialPages ) );
+    $this->render( 'index', array( 'bagecmsDataList'=>$specialList, 'bagecmsPagebar'=>$specialPages ) );
   }
 
   /**
@@ -47,8 +47,8 @@ class SpecialController extends XFrontBase
     $criteria->addCondition ( 't.status_is=:status AND special_id=:specialId');
     $criteria->params = array('status'=>'Y', 'specialId'=>$specialModel->id);
     $criteria->order = 't.id DESC';
-    $young91SpecialCount = $specialPostModel->count( $criteria );
-    $postPage = new CPagination( $young91SpecialCount );
+    $bagecmsSpecialCount = $specialPostModel->count( $criteria );
+    $postPage = new CPagination( $bagecmsSpecialCount );
     $postPage->pageSize = 10;
     $postPageParams = XUtils::buildCondition( $_GET, array ( ) );
     $postPageParams['#'] = 'list';
@@ -62,7 +62,7 @@ class SpecialController extends XFrontBase
     $data = array(
         'specialShow'=>$specialModel,
         'specialPostList'=>$specialPostList,
-        'young91Pagebar'=>$postPage,
+        'bagecmsPagebar'=>$postPage,
      );
     $this->render($tpl, $data);
   }

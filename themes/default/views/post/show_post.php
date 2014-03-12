@@ -19,8 +19,8 @@
     </div>
     <div class="postWrap">
       <div class="h head">
-        <h1 class="title"><?php echo $young91Show->title?></h1>
-        <p class="info"> <?php echo date('Y-m-d H:i:s',$young91Show->create_time)?><span class="split">|</span> 发布者: admin<span class="split">|</span> 查看: <em id="_viewnum"><?php echo $young91Show->view_count?></em> </p>
+        <h1 class="title"><?php echo $bagecmsShow->title?></h1>
+        <p class="info"> <?php echo date('Y-m-d H:i:s',$bagecmsShow->create_time)?><span class="split">|</span> 发布者: admin<span class="split">|</span> 查看: <em id="_viewnum"><?php echo $bagecmsShow->view_count?></em> </p>
       </div>
 	  
       <?php if($attrVal):?>
@@ -33,25 +33,25 @@
       </div>
       <?php endif?>
       
-	  <?php if($young91Show->image_list):?>
-	  <?php $imageList = unserialize($young91Show->image_list)?>
+	  <?php if($bagecmsShow->image_list):?>
+	  <?php $imageList = unserialize($bagecmsShow->image_list)?>
 	  <div class="postAlbum clear"><ul><?php foreach($imageList as $album):?><li><a href="<?php echo $this->_baseUrl?>/<?php echo $album['file']?>" data-lightbox="a"><img src="<?php echo $this->_baseUrl?>/<?php echo $album['file']?>" /></a></li><?php endforeach?></div>
 	  <?php endif?>
-      <?php if($young91Show->intro):?>
-      <div class="intro clear"><?php echo $young91Show->intro?></div>
+      <?php if($bagecmsShow->intro):?>
+      <div class="intro clear"><?php echo $bagecmsShow->intro?></div>
       <?php endif?>
       <div class="cdata clear">
         <table cellpadding="0" cellspacing="0" class="showTb">
           <tbody>
             <tr>
-              <td id="postContent"><?php echo $young91Show->content?></td>
+              <td id="postContent"><?php echo $bagecmsShow->content?></td>
             </tr>
           </tbody>
         </table>
 		<!--标签-->
-     <?php if($young91Show->tags):?>
+     <?php if($bagecmsShow->tags):?>
       <?php 
-	  $tags = @explode(',', $young91Show->tags);
+	  $tags = @explode(',', $bagecmsShow->tags);
 	  ?>
       <div class="postTags clear">
         <p class="tagsTitle floatL">标签：</p>
@@ -66,8 +66,8 @@
       </div>
     </div>
 	<!--上下篇-->
-    <?php $before = young91::getItem('Post', 'pageBefore', array('where'=>"id<{$young91Show['id']} AND catalog_id={$young91Show['catalog_id']}"))?>
-    <?php $behind = young91::getItem('Post', 'pageBehind', array('where'=>"id>{$young91Show['id']} AND catalog_id={$young91Show['catalog_id']}"))?>
+    <?php $before = Bagecms::getItem('Post', 'pageBefore', array('where'=>"id<{$bagecmsShow['id']} AND catalog_id={$bagecmsShow['catalog_id']}"))?>
+    <?php $behind = Bagecms::getItem('Post', 'pageBehind', array('where'=>"id>{$bagecmsShow['id']} AND catalog_id={$bagecmsShow['catalog_id']}"))?>
     <div class="preNext clear" > <em class="floatL">上一篇：
       <?php if($before):?>
       <a href="<?php echo $this->createUrl('post/show',array('id'=>$before['id']))?>"><?php echo $before['title']?></a>
@@ -90,7 +90,7 @@
       </div>
       <div class="bmc">
         <ul class="list clear" id="raid_div">
-		<?php foreach((array)young91::getList('post','index_news',array('where'=>"status_is='Y' AND catalog_id={$young91Show['catalog_id']} AND id!={$young91Show['id']}",'order'=>'id DESC', 'limit'=>8)) as $newsKey=>$newsRow):?>
+		<?php foreach((array)Bagecms::getList('post','index_news',array('where'=>"status_is='Y' AND catalog_id={$bagecmsShow['catalog_id']} AND id!={$bagecmsShow['id']}",'order'=>'id DESC', 'limit'=>8)) as $newsKey=>$newsRow):?>
           <li>• <a href="<?php echo $this->createUrl('post/show',array('id'=>$newsRow['id']))?>" target="_blank"><?php echo $newsRow['title']?></a></li>
 		<?php endforeach?> 
         </ul>
@@ -98,7 +98,7 @@
     </div>
 	<!--/相关阅读-->
 	<!--评论区域-->
-    <?php $this->renderPartial('_comment',array('young91Show'=>$young91Show))?>
+    <?php $this->renderPartial('_comment',array('bagecmsShow'=>$bagecmsShow))?>
 	<!--/评论区域-->
   </div>
 </div>

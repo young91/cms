@@ -14,13 +14,13 @@
         </div>
         <div class="clear">
            <ul class="tagList">
-			<?php foreach($young91DataList as $row):?>
+			<?php foreach($bagecmsDataList as $row):?>
             <li><a href="<?php echo $this->createUrl('post',array('name'=>urlencode($row->tag_name)))?>" target="_blank" title="<?php echo $row->tag_name?>共有<?php echo $row->data_count?>条内容"><?php echo $row->tag_name?></a></li>
             <?php endforeach?>
           </ul>
         </div>
         <div class="pagebar clear">
-          <?php $this->widget('CLinkPager',array('pages'=>$young91Pagebar));?>
+          <?php $this->widget('CLinkPager',array('pages'=>$bagecmsPagebar));?>
         </div>
       </div>
     </div>

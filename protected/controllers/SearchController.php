@@ -2,12 +2,12 @@
 /**
  * 搜索
  *
- * @author        young91
- * @copyright     Copyright (c) 2014 young91. All rights reserved.
- * @link          http://www.ecoutpost.com
- * @package       young91.Controller
- * @license       http://www.ecoutpost.com/license
- * @version       v1.0
+ * @author        shuguang <5565907@qq.com>
+ * @copyright     Copyright (c) 2007-2013 bagesoft. All rights reserved.
+ * @link          http://www.bagecms.com
+ * @package       BageCMS.Controller
+ * @license       http://www.bagecms.com/license
+ * @version       v3.1.0
  */
 
 class SearchController extends XFrontBase
@@ -25,8 +25,8 @@ class SearchController extends XFrontBase
         $postCriteria->params[':status'] = 'Y';
         $postCriteria->with = 'catalog';
         $postCriteria->order = 't.id DESC';
-        $young91QuestionCount = $postModel->count( $postCriteria );
-        $postPages = new CPagination( $young91QuestionCount );
+        $bagecmsQuestionCount = $postModel->count( $postCriteria );
+        $postPages = new CPagination( $bagecmsQuestionCount );
         $postPages->pageSize = 15;
         $postPageParams = XUtils::buildCondition( $_GET, array ( 'keyword'    ) );
         $postPageParams['#'] = 'list';
@@ -34,6 +34,6 @@ class SearchController extends XFrontBase
         $postCriteria->limit = $postPages->pageSize;
         $postCriteria->offset = $postPages->currentPage * $postPages->pageSize;
         $postList = $postModel->findAll( $postCriteria );
-        $this->render( 'index', array( 'young91DataList'=>$postList, 'young91Pagebar'=>$postPages ) );
+        $this->render( 'index', array( 'bagecmsDataList'=>$postList, 'bagecmsPagebar'=>$postPages ) );
     }
 }
