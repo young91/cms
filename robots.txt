@@ -1,5 +1,5 @@
 #
-# robots.txt for CMS
+# robots.txt for BageCMS
 #
 User-agent: * 
 Disallow: /admini/

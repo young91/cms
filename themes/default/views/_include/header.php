@@ -70,7 +70,7 @@
         <li><a href="<?php echo $this->createUrl('/question')?>">留言咨询</a></li>
       </ul>
     </div>-->
-    <div class="subnav"> <i class="z"></i> <span> <a href="http://www.bagesoft.cn" >八哥软件</a> &nbsp;&nbsp;&nbsp; 咨询QQ：5565907 </span> <i class="y"></i> </div>
+    <div class="subnav"> <i class="z"></i> <span>  &nbsp;&nbsp;&nbsp; 咨询QQ：345819146 </span> <i class="y"></i> </div>
   </div>
 </div>
 <!--/头--> 

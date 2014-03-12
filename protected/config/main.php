@@ -34,21 +34,21 @@ return array(
            'class'=>'CFileCache',
         ),
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=cms',
+			'connectionString' => 'mysql:host=127.0.0.1;dbname=mvcms',
 			'emulatePrepare' => true,
 			'enableParamLogging' => true,
 			'enableProfiling'=>true,
 			'username' => 'root',
 			'password' => 'yangliu',
 			'charset' => 'utf8',
-			'tablePrefix' => '',
+			'tablePrefix' => 'mv_',
 		),
 		'errorHandler'=>array(
             'errorAction'=>'error/index',
         ), 
         'urlManager'=>array(
-        	//'urlFormat'=>'path',
-        	//'urlSuffix'=>'.html',
+        	'urlFormat'=>'path',
+        	'urlSuffix'=>'.html',
         	'showScriptName'=>true,
         	'rules'=>array(
         		'post/<id:\d+>/*'=>'post/show',
