@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+/* @var $this LoginController */
+
+$this->breadcrumbs=array(
+	'Login',
+);
+?>
+<?php /* @var $this Controller */ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <?php Yii::app()->bootstrap->register();?>
+    <meta name="language" content="en" />
+    <?php Yii::app()->bootstrap->register(); ?>
     <link rel="stylesheet" type="text/css" href="./public/css/login.css" />
+
+
     <title>登录管理中心</title>
 </head>
+
 <body>
+
 <div id="header">
     <div class="logo"></div>
 </div>
@@ -26,9 +39,9 @@
         <div class="title">请登录</div>
         <div class="login">
             <div class="form">
-                <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+                <?php $form=$this->beginWidget('CActiveForm', array(
                     'id'=>'login-check',
-                    'htmlOptions'=>array('class'=>'well'),
+                    'enableAjaxValidation'=>true,
                 )); ?>
                 <div class="user">
                     <label>用户名:</label><input tabindex="1" type="text" name="m_name"
@@ -46,7 +59,13 @@
                                               name="m_check" id="m_check" size="20" maxLength="20" value="">
 
                 </div>
-
+                <?php $this->widget('bootstrap.widgets.TbButton', array(
+                    'buttonType'=>'button',
+                    'type'=>'primary',
+                    'label'=>'Click me',
+                    'loadingText'=>'loading...',
+                    'htmlOptions'=>array('id'=>'buttonStateful'),
+                )); ?>
                 <div class="btn_login">
 
                     <input type="submit" name="login" id="login" value="登陆" />
@@ -59,6 +78,7 @@
     <div class="reg"></div>
     <hr class="hr_solid" />
 </div>
+</div>
 <div id="footer">
 		<span class="left">&copy;2012-2013 Powered by <a
                 href="http://www.joyplus.tv" target="_blank">JoyPlus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阅读joyplusCMS
@@ -66,4 +86,35 @@
                 href="https://github.com/joyplus/joyplus-cms/wiki/joyplus%E6%9C%8D%E5%8A%A1%E5%88%97%E8%A1%A8"
                 target="_blank"><font style="color: #00a1d9">《API文档》</font> </a> </span>
 </div>
+<script>
+    var cururl=",<?php echo geturl();?>";
+    $(document).ready(function(){
+        $("#login").click(
+            function(){
+                if($('#m_name').val() == ""){
+                    alert( "请输入用户名" );
+                    $('#m_name').focus();
+                    return false;
+                }
+                if($('#m_password').val() == ""){
+                    alert( "请输入密码" );
+                    $('#m_password').focus();
+                    return false;
+                }
+                if($('#m_check').val() == ""){
+                    alert( "请输入安全码" );
+                    $('#m_check').focus();
+                    return false;
+                }
+                $("#form1").submit();
+                $("#login").attr("disabled", "disabled");
+            }
+        );
+        $('#m_name').focus();
+        $("img").pngfix();
+        if(cururl.indexOf("/admin/") >0){alert('请将文件夹admin改名,避免被黑客入侵攻击');}
+    });
+</script>
+
 </body>
+</html>

@@ -24,11 +24,11 @@ input,select {
 	display: block;
 	line-height: 0
 }
-a: link {
+a:link {
 	color: #0000ff;
 	text-decoration: none
 }
-a: hover {
+a:hover {
 	text-decoration: underline
 }
 #header {
